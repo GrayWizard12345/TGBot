@@ -23,17 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="Added database support (Using sqlite)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/ClientStage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/command/CommandExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/command/condition/ICondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/menu/IMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/menu/MealMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/IModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/telegram/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/telegram/data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +55,34 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TGBot" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TGBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TGBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TGBot" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -61,9 +93,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -81,6 +113,37 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.graywizard123.tgbot.telegram.command" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TGBot [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.TGBot [run]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -118,14 +181,34 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added database support (Using sqlite)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1599926863437">
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1599945601113">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1599926863437" />
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1599945601113" />
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599869206319">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599869206319" />
+    <state x="957" y="425" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1599945638979">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="957" y="425" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599945638979" />
+    <state width="2505" height="388" key="GridCell.Tab.0.bottom" timestamp="1599946946103">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2505" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1599946946103" />
+    <state width="2505" height="388" key="GridCell.Tab.0.center" timestamp="1599946946103">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2505" height="388" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1599946946103" />
+    <state width="2505" height="388" key="GridCell.Tab.0.left" timestamp="1599946946103">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2505" height="388" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1599946946103" />
+    <state width="2505" height="388" key="GridCell.Tab.0.right" timestamp="1599946946103">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state width="2505" height="388" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1599946946103" />
     <state x="757" y="385" key="IDE.errors.dialog" timestamp="1599927820649">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -134,5 +217,9 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="632" y="174" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1599869497850" />
+    <state x="852" y="329" width="840" height="1034" key="run.anything.popup" timestamp="1599946225650">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="852" y="329" width="840" height="1034" key="run.anything.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1599946225650" />
   </component>
 </project>

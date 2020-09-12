@@ -9,12 +9,12 @@ import java.sql.SQLException;
 
 public class UserRepository {
 
-    public static User getById(int id){
+    public static User getById(long id){
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE id="+ id);
 
             if (response.first()) {
-                String telegramId = response.getNString("telegram_id");
+                long telegramId = response.getLong("telegram_id");
                 String savedPhone = response.getNString("saved_phone");
                 String savedAddress = response.getNString("saved_address");
 
@@ -29,7 +29,7 @@ public class UserRepository {
         }
     }
 
-    public static User getByTelegramId(String telegramId) {
+    public static User getByTelegramId(long telegramId) {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE telegram_id=\""+ telegramId + "\"");
 

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MealRepository {
 
-    public static Meal getById(int id){
+    public static Meal getById(long id){
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM meals WHERE id="+ id);
 

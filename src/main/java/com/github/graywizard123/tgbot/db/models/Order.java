@@ -7,13 +7,13 @@ import java.util.HashMap;
 
 public class Order {
 
-    private final int id;
+    private final long id;
     private final User from;
     private final String address;
     private final String phone;
     private final HashMap<Meal, Integer> meals;
 
-    public Order(int id, User from, String address, String phone, HashMap<Meal, Integer> meals) {
+    public Order(long id, User from, String address, String phone, HashMap<Meal, Integer> meals) {
         this.id = id;
         this.from = from;
         this.address = address;
@@ -21,7 +21,7 @@ public class Order {
         this.meals = meals;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

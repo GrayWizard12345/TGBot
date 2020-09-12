@@ -40,7 +40,7 @@ public class OrderRepository {
         return meals;
     }
 
-    public static Order getById(int id) {
+    public static Order getById(long id) {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM orders WHERE id="+ id);
 

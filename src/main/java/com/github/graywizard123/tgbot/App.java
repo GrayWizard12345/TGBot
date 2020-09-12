@@ -3,6 +3,7 @@
  */
 package com.github.graywizard123.tgbot;
 
+import com.github.graywizard123.tgbot.telegram.TelegramManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ public class App extends Application {
     public static final Logger LOGGER = LoggerFactory.getLogger("TGBot");
 
     public static void main(String[] args) {
-
+        TelegramManager.start();
         launch();
     }
 

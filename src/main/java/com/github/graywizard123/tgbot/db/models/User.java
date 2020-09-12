@@ -5,23 +5,23 @@ import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
 public class User {
 
-    private final int id;
-    private final String telegramId;
+    private final long id;
+    private final long telegramId;
     private String savedPhone;
     private String savedAddress;
 
-    public User(int id, String telegramId, String savedPhone, String savedAddress) {
+    public User(long id, long telegramId, String savedPhone, String savedAddress) {
         this.id = id;
         this.telegramId = telegramId;
         this.savedPhone = savedPhone;
         this.savedAddress = savedAddress;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public String getTelegramId() {
+    public long getTelegramId() {
         return telegramId;
     }
 
