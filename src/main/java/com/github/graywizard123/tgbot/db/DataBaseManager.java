@@ -1,7 +1,9 @@
 package com.github.graywizard123.tgbot.db;
 
 import com.github.graywizard123.tgbot.App;
-import com.github.graywizard123.tgbot.db.models.IModel;
+import com.github.graywizard123.tgbot.db.models.Meal;
+import com.github.graywizard123.tgbot.db.models.User;
+import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableUtils;
 
 import java.sql.*;
@@ -18,6 +20,10 @@ public class DataBaseManager {
             App.LOGGER.debug("Initializing database manager");
             connection = DriverManager.getConnection("jdbc:sqlite:"+DATABASE_PATH);
             statement = connection.createStatement();
+
+            createTable(User.getTableName(), User.getTableColumns());
+            createTable(Meal.getTableName(), User.getTableColumns());
+
             App.LOGGER.info("Database manager initialized");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -25,13 +31,13 @@ public class DataBaseManager {
         }
     }
 
-    public static void registerModel(IModel model){
+    public static void createTable(String name, TableColumn[] columns) {
         try {
-            App.LOGGER.debug("Registering " + model.getTableName());
+            App.LOGGER.debug("Creating " + name);
             statement.execute("CREATE TABLE IF NOT EXISTS " +
-                                  model.getTableName() +
-                                  TableUtils.fromModelToSQL(model) + ';');
-            App.LOGGER.info(model.getTableName() + " was registered");
+                                  name +
+                                  TableUtils.fromColumnArrayToSQL(columns) + ';');
+            App.LOGGER.info(name + " was created");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

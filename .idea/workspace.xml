@@ -22,26 +22,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/IModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/MainSceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/MenuSceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mainscene/layout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/menuscene/layout.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="Added database support (Using sqlite)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TGBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TGBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/IModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +62,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,6 +91,14 @@
       <option name="presentableId" value="Default" />
       <updated>1599869060174</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added database support (Using sqlite)">
+      <created>1599910977204</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599910977204</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,15 +113,23 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added database support (Using sqlite)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database support (Using sqlite)" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1599909572926">
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1599926863437">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1599909572926" />
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1599926863437" />
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599869206319">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599869206319" />
+    <state x="757" y="385" key="IDE.errors.dialog" timestamp="1599927820649">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="757" y="385" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599927820649" />
     <state x="632" y="174" key="SettingsEditor" timestamp="1599869497850">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

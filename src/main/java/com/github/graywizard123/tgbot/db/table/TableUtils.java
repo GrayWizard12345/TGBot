@@ -1,6 +1,5 @@
 package com.github.graywizard123.tgbot.db.table;
 
-import com.github.graywizard123.tgbot.db.models.IModel;
 import org.jetbrains.annotations.NotNull;
 
 public class TableUtils {
@@ -19,10 +18,9 @@ public class TableUtils {
         return resultBuilder.toString();
     }
 
-    public static String fromModelToSQL(@NotNull IModel model){
+    public static String fromColumnArrayToSQL(@NotNull TableColumn[] columns){
         StringBuilder resultBuilder = new StringBuilder();
         resultBuilder.append("(\n");
-        TableColumn[] columns = model.getTablesColumns();
         for (int i = 0; i < columns.length; i++) {
             TableColumn column = columns[i];
             resultBuilder.append(fromTableColumnToSQL(column));
