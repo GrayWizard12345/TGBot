@@ -3,12 +3,22 @@
  */
 package com.github.graywizard123.tgbot;
 
-public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+import javafx.application.Application;
+import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class App extends Application {
+
+    public static final Logger LOGGER = LoggerFactory.getLogger("TGBot");
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        launch();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
     }
 }

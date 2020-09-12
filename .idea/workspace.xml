@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,14 +23,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/IModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/MainSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/MenuSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mainscene/layout.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/menuscene/layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TGBot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TGBot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseManagement/DBManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,6 +85,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,11 +111,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1599909572926">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1599909572926" />
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599869206319">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599869206319" />
+    <state x="632" y="174" key="SettingsEditor" timestamp="1599869497850">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="632" y="174" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1599869497850" />
   </component>
 </project>
