@@ -2,20 +2,16 @@ package com.github.graywizard123.tgbot.event;
 
 import java.util.List;
 
-public class TGBotOrderListUpdateEvent implements ITGBotEvent {
+public class OrderListUpdateEvent implements ITGBotEvent {
 
-    private List<Long> orderList;
+    private final List<Long> orderList;
 
-    public TGBotOrderListUpdateEvent(List<Long> orderList) {
+    public OrderListUpdateEvent(List<Long> orderList) {
         this.orderList = orderList;
     }
 
     public List<Long> getOrderList() {
         return orderList;
-    }
-
-    public void setOrderList(List<Long> orderList) {
-        this.orderList = orderList;
     }
 
     @Override

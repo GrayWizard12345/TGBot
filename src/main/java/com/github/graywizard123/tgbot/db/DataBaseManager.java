@@ -2,6 +2,7 @@ package com.github.graywizard123.tgbot.db;
 
 import com.github.graywizard123.tgbot.App;
 import com.github.graywizard123.tgbot.db.models.Meal;
+import com.github.graywizard123.tgbot.db.models.Order;
 import com.github.graywizard123.tgbot.db.models.User;
 import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableUtils;
@@ -22,7 +23,8 @@ public class DataBaseManager {
             statement = connection.createStatement();
 
             createTable(User.getTableName(), User.getTableColumns());
-            createTable(Meal.getTableName(), User.getTableColumns());
+            createTable(Meal.getTableName(), Meal.getTableColumns());
+            createTable(Order.getTableName(), Order.getTableColumns());
 
             App.LOGGER.info("Database manager initialized");
         } catch (SQLException throwables) {

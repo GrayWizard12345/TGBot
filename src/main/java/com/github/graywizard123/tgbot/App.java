@@ -3,6 +3,7 @@
  */
 package com.github.graywizard123.tgbot;
 
+import com.github.graywizard123.tgbot.gui.SceneManager;
 import com.github.graywizard123.tgbot.telegram.TelegramManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -15,11 +16,19 @@ public class App extends Application {
 
     public static void main(String[] args) {
         TelegramManager.start();
+        SceneManager.init();
         launch();
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
+        SceneManager.setPrimaryStage(primaryStage);
+        SceneManager.setScene("main");
+        primaryStage.show();
+    }
 
+    @Override
+    public void stop() {
+        System.exit(0);
     }
 }

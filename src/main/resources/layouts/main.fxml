@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="614.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.graywizard123.tgbot.gui.MainSceneController">
+<AnchorPane prefHeight="614.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.graywizard123.tgbot.gui.controllers.MainSceneController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="913.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -24,21 +24,16 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Menu">
             <items>
-              <MenuItem fx:id="onenMenuButtonn" mnemonicParsing="false" text="Open" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="openMenuButton" mnemonicParsing="false" text="Open" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
       <SplitPane dividerPositions="0.27771679473106475" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
          <items>
-            <AnchorPane fx:id="orderList" prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ListView prefHeight="612.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView fx:id="orderList" prefHeight="612.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -64,7 +59,7 @@
                      </font>
                   </Label>
                   <Button fx:id="acceptButton" layoutX="589.0" layoutY="573.0" mnemonicParsing="false" text="Accept" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-                  <Button fx:id="declineBtn" layoutX="524.0" layoutY="545.0" mnemonicParsing="false" text="Decline" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="75.0" />
+                  <Button fx:id="declineButton" layoutX="524.0" layoutY="545.0" mnemonicParsing="false" text="Decline" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="75.0" />
                   <TableView fx:id="orderInfoView" layoutX="14.0" layoutY="92.0" prefHeight="433.0" prefWidth="624.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="90.0">
                     <columns>
                       <TableColumn prefWidth="369.0" text="Meal" />

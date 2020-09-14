@@ -2,6 +2,7 @@ package com.github.graywizard123.tgbot.db.repositories;
 
 import com.github.graywizard123.tgbot.App;
 import com.github.graywizard123.tgbot.db.DataBaseManager;
+import com.github.graywizard123.tgbot.db.models.Category;
 import com.github.graywizard123.tgbot.db.models.Meal;
 
 import java.sql.ResultSet;
@@ -19,13 +20,34 @@ public class MealRepository {
                 String name = response.getNString("name");
                 String description = response.getNString("description");
                 int price = response.getInt("price");
+                Category category = CategoryRepository.getById(response.getLong("category_id"));
 
-                return new Meal(id, name, description, price);
+                return new Meal(id, name, description, price, category);
             } else {
                 return null;
             }
         } catch (SQLException throwables) {
             App.LOGGER.error("Cannot get meal with " + id + " id");
+            throwables.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Meal getByName(String name){
+        try {
+            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM meals WHERE name=\""+name+"\"");
+
+            if (response.first()) {
+                long id = response.getLong("id");
+                String description = response.getNString("description");
+                int price = response.getInt("price");
+                Category category = CategoryRepository.getById(response.getLong("category_id"));
+
+                return new Meal(id, name, description, price, category);
+            } else {
+                return null;
+            }
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
             return null;
         }
@@ -41,8 +63,9 @@ public class MealRepository {
                 String name = response.getNString("name");
                 String description = response.getNString("description");
                 int price = response.getInt("price");
+                Category category = CategoryRepository.getById(response.getLong("category_id"));
 
-                list.add(new Meal(id, name, description, price));
+                list.add(new Meal(id, name, description, price, category));
             }
 
             return list;
@@ -59,6 +82,22 @@ public class MealRepository {
                     meal.getName(),
                     meal.getDescription(),
                     meal.getPrice()));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static void remove(long id) {
+        try {
+            DataBaseManager.executeQuery(String.format("DELETE FROM %s WHERE id=%d", Meal.getTableName(), id));
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public static void remove(String name) {
+        try {
+            DataBaseManager.executeQuery(String.format("DELETE FROM %s WHERE name=\"%s\"", Meal.getTableName(), name));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
