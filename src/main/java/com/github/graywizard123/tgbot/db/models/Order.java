@@ -47,7 +47,7 @@ public class Order {
 
     public static TableColumn[] getTableColumns(){
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE", "AUTOINCREMENT", "PRIMARY KEY"),
+                new TableColumn("id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
                 new TableColumn("user_id", TableColumnType.INTEGER, "NOT NULL"),
                 new TableColumn("address", TableColumnType.TEXT, "NOT NULL"),
                 new TableColumn("phone", TableColumnType.TEXT, "NOT NULL"),

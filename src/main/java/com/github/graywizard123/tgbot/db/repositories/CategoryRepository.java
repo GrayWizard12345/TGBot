@@ -15,7 +15,7 @@ public class CategoryRepository {
         StringBuilder builder = new StringBuilder();
 
         for (int i = 0;i < meals.size();i++) {
-            builder.append(meals.get(i));
+            builder.append(meals.get(i).getId());
             if (i != meals.size() - 1) {
                 builder.append(",");
             }
@@ -29,7 +29,8 @@ public class CategoryRepository {
         List<Meal> meals = new ArrayList<>();
 
         for (String mealID : buffer) {
-            meals.add(MealRepository.getById(Long.parseLong(mealID)));
+            if (!mealID.isEmpty() && !mealID.equals("null"))
+                meals.add(MealRepository.getById(Long.parseLong(mealID)));
         }
 
         return meals;
@@ -37,11 +38,18 @@ public class CategoryRepository {
 
     public static void add(Category category) {
         try {
-            DataBaseManager.executeUpdate(String.format("INSERT INTO %s(?, ?, ?) VALUES(%d, \"%s\", \"%s\")",
-                    Category.getTableName(),
-                    category.getId() == 0 ? null : category.getId(),
-                    category.getTitle(),
-                    serializeMeals(category.getMeals())));
+            if (category.getId() == 0) {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO %s(title, meals) VALUES(\"%s\", \"%s\")",
+                        Category.getTableName(),
+                        category.getTitle(),
+                        serializeMeals(category.getMeals())));
+            } else {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO %s(id, title, meals) VALUES(%d, \"%s\", \"%s\")",
+                        Category.getTableName(),
+                        category.getId(),
+                        category.getTitle(),
+                        serializeMeals(category.getMeals())));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -51,9 +59,9 @@ public class CategoryRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery(String.format("SELECT * FROM %s WHERE id=%d", Category.getTableName(), id));
 
-            if (response.first()) {
-                String title = response.getNString("title");
-                List<Meal> meals = deserializeMeals(response.getNString("meals"));
+            if (response.next()) {
+                String title = response.getString("title");
+                List<Meal> meals = deserializeMeals(response.getString("meals"));
 
                 return new Category(id, title, meals);
             }
@@ -68,9 +76,9 @@ public class CategoryRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery(String.format("SELECT * FROM %s WHERE title=\"%s\"", Category.getTableName(), title));
 
-            if (response.first()) {
+            if (response.next()) {
                 long id = response.getLong("id");
-                List<Meal> meals = deserializeMeals(response.getNString("meals"));
+                List<Meal> meals = deserializeMeals(response.getString("meals"));
 
                 return new Category(id, title, meals);
             }
@@ -100,8 +108,8 @@ public class CategoryRepository {
 
             while (response.next()) {
                 long id = response.getLong("id");
-                String title = response.getNString("title");
-                List<Meal> meals = deserializeMeals(response.getNString("meals"));
+                String title = response.getString("title");
+                List<Meal> meals = deserializeMeals(response.getString("meals"));
 
                 categories.add(new Category(id, title, meals));
             }

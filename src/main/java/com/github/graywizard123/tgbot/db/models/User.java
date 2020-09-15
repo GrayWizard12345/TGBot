@@ -47,7 +47,7 @@ public class User {
 
     public static TableColumn[] getTableColumns() {
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE", "AUTOINCREMENT", "PRIMARY KEY"),
+                new TableColumn("id", TableColumnType.INTEGER, "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
                 new TableColumn("telegram_id", TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
                 new TableColumn("saved_phone", TableColumnType.TEXT),
                 new TableColumn("saved_address", TableColumnType.TEXT)

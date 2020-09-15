@@ -13,10 +13,10 @@ public class UserRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE id="+ id);
 
-            if (response.first()) {
+            if (response.next()) {
                 long telegramId = response.getLong("telegram_id");
-                String savedPhone = response.getNString("saved_phone");
-                String savedAddress = response.getNString("saved_address");
+                String savedPhone = response.getString("saved_phone");
+                String savedAddress = response.getString("saved_address");
 
                 return new User(id, telegramId, savedPhone, savedAddress);
             } else {
@@ -33,10 +33,10 @@ public class UserRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE telegram_id=\""+ telegramId + "\"");
 
-            if (response.first()) {
+            if (response.next()) {
                 int id = response.getInt("id");
-                String savedPhone = response.getNString("saved_phone");
-                String savedAddress = response.getNString("saved_address");
+                String savedPhone = response.getString("saved_phone");
+                String savedAddress = response.getString("saved_address");
 
                 return new User(id, telegramId, savedPhone, savedAddress);
             } else {
@@ -62,11 +62,18 @@ public class UserRepository {
 
     public static void add(User user) {
         try {
-            DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, \"%s\", \"%s\", \"%s\")",
-                    user.getId() == 0 ? null : user.getId(),
-                    user.getTelegramId(),
-                    user.getSavedPhone(),
-                    user.getSavedAddress()));
+            if (user.getId() == 0) {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(telegram_id, saved_phone, saved_address) VALUES(\"%s\", \"%s\", \"%s\")",
+                        user.getTelegramId(),
+                        user.getSavedPhone(),
+                        user.getSavedAddress()));
+            } else  {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, \"%s\", \"%s\", \"%s\")",
+                        user.getId(),
+                        user.getTelegramId(),
+                        user.getSavedPhone(),
+                        user.getSavedAddress()));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

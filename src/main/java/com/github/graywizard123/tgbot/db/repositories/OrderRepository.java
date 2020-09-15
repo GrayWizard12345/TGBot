@@ -44,11 +44,11 @@ public class OrderRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM orders WHERE id="+ id);
 
-            if (response.first()) {
+            if (response.next()) {
                 int userId = response.getInt("user_id");
-                String phone = response.getNString("phone");
-                String address = response.getNString("address");
-                String serializedMeals = response.getNString("meals");
+                String phone = response.getString("phone");
+                String address = response.getString("address");
+                String serializedMeals = response.getString("meals");
 
                 return new Order(id, UserRepository.getById(userId), address, phone, deserializeMeals(serializedMeals));
             } else {
@@ -62,12 +62,20 @@ public class OrderRepository {
 
     public static void add(Order order){
         try {
-            DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, user_id, address, phone, meals) VALUES(%d, %d, \"%s\", \"%s\", \"%s\")",
-                    order.getId() == 0 ? null : order.getId(),
-                    order.getFrom().getId(),
-                    order.getAddress(),
-                    order.getPhone(),
-                    serializeMeals(order.getMeals())));
+            if (order.getId() == 0) {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, user_id, address, phone, meals) VALUES(%d, %d, \"%s\", \"%s\", \"%s\")",
+                        order.getId(),
+                        order.getFrom().getId(),
+                        order.getAddress(),
+                        order.getPhone(),
+                        serializeMeals(order.getMeals())));
+            } else {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(user_id, address, phone, meals) VALUES(%d, \"%s\", \"%s\", \"%s\")",
+                        order.getFrom().getId(),
+                        order.getAddress(),
+                        order.getPhone(),
+                        serializeMeals(order.getMeals())));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

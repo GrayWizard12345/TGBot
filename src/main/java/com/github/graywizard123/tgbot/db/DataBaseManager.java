@@ -1,6 +1,7 @@
 package com.github.graywizard123.tgbot.db;
 
 import com.github.graywizard123.tgbot.App;
+import com.github.graywizard123.tgbot.db.models.Category;
 import com.github.graywizard123.tgbot.db.models.Meal;
 import com.github.graywizard123.tgbot.db.models.Order;
 import com.github.graywizard123.tgbot.db.models.User;
@@ -25,6 +26,7 @@ public class DataBaseManager {
             createTable(User.getTableName(), User.getTableColumns());
             createTable(Meal.getTableName(), Meal.getTableColumns());
             createTable(Order.getTableName(), Order.getTableColumns());
+            createTable(Category.getTableName(), Category.getTableColumns());
 
             App.LOGGER.info("Database manager initialized");
         } catch (SQLException throwables) {
@@ -51,7 +53,6 @@ public class DataBaseManager {
 
     public static void executeUpdate(String sql) throws SQLException{
         statement.executeUpdate(sql);
-        connection.commit();
     }
 
 }

@@ -43,9 +43,9 @@ public class Category {
 
     public static TableColumn[] getTableColumns(){
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE", "AUTOINCREMENT", "PRIMARY KEY"),
+                new TableColumn("id", TableColumnType.INTEGER, "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
                 new TableColumn("title", TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
-                new TableColumn("meals", TableColumnType.TEXT, "NOT NULL")
+                new TableColumn("meals", TableColumnType.TEXT)
         };
     }
 }

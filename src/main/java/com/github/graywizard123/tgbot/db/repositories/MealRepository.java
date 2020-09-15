@@ -16,13 +16,13 @@ public class MealRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM meals WHERE id="+ id);
 
-            if (response.first()) {
-                String name = response.getNString("name");
-                String description = response.getNString("description");
+            if (response.next()) {
+                String name = response.getString("name");
+                String description = response.getString("description");
                 int price = response.getInt("price");
-                Category category = CategoryRepository.getById(response.getLong("category_id"));
+                long categoryId = response.getLong("category_id");
 
-                return new Meal(id, name, description, price, category);
+                return new Meal(id, name, description, price, categoryId);
             } else {
                 return null;
             }
@@ -37,13 +37,13 @@ public class MealRepository {
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM meals WHERE name=\""+name+"\"");
 
-            if (response.first()) {
+            if (response.next()) {
                 long id = response.getLong("id");
-                String description = response.getNString("description");
+                String description = response.getString("description");
                 int price = response.getInt("price");
-                Category category = CategoryRepository.getById(response.getLong("category_id"));
+                long categoryId = response.getLong("category_id");
 
-                return new Meal(id, name, description, price, category);
+                return new Meal(id, name, description, price, categoryId);
             } else {
                 return null;
             }
@@ -60,12 +60,12 @@ public class MealRepository {
 
             while (response.next()) {
                 int id = response.getInt("id");
-                String name = response.getNString("name");
-                String description = response.getNString("description");
+                String name = response.getString("name");
+                String description = response.getString("description");
                 int price = response.getInt("price");
-                Category category = CategoryRepository.getById(response.getLong("category_id"));
+                long categoryId = response.getLong("category_id");
 
-                list.add(new Meal(id, name, description, price, category));
+                list.add(new Meal(id, name, description, price, categoryId));
             }
 
             return list;
@@ -77,11 +77,22 @@ public class MealRepository {
 
     public static void add(Meal meal){
         try {
-            DataBaseManager.executeUpdate(String.format("INSERT INTO meals(id, name, description, price) VALUES(%d, \"%s\", \"%s\", %d)",
-                    meal.getId() == 0 ? null : meal.getId(),
-                    meal.getName(),
-                    meal.getDescription(),
-                    meal.getPrice()));
+            if (meal.getId() == 0) {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO meals(name, description, price, category_id) VALUES(\"%s\", \"%s\", %d, %d)",
+                        meal.getName(),
+                        meal.getDescription(),
+                        meal.getPrice(),
+                        meal.getCategoryId()
+                ));
+            } else {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO meals(id, name, description, price, category_id) VALUES(%d, \"%s\", \"%s\", %d, %d)",
+                        meal.getId(),
+                        meal.getName(),
+                        meal.getDescription(),
+                        meal.getPrice(),
+                        meal.getCategoryId()
+                ));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -89,7 +100,7 @@ public class MealRepository {
 
     public static void remove(long id) {
         try {
-            DataBaseManager.executeQuery(String.format("DELETE FROM %s WHERE id=%d", Meal.getTableName(), id));
+            DataBaseManager.executeUpdate(String.format("DELETE FROM %s WHERE id=%d", Meal.getTableName(), id));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -97,7 +108,7 @@ public class MealRepository {
 
     public static void remove(String name) {
         try {
-            DataBaseManager.executeQuery(String.format("DELETE FROM %s WHERE name=\"%s\"", Meal.getTableName(), name));
+            DataBaseManager.executeUpdate(String.format("DELETE FROM %s WHERE name=\"%s\"", Meal.getTableName(), name));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
