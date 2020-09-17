@@ -3,14 +3,14 @@ package com.github.graywizard123.tgbot.db.models;
 import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
-public class User {
+public class UserModel {
 
     private final long id;
     private final long telegramId;
     private String savedPhone;
     private String savedAddress;
 
-    public User(long id, long telegramId, String savedPhone, String savedAddress) {
+    public UserModel(long id, long telegramId, String savedPhone, String savedAddress) {
         this.id = id;
         this.telegramId = telegramId;
         this.savedPhone = savedPhone;
@@ -47,7 +47,7 @@ public class User {
 
     public static TableColumn[] getTableColumns() {
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
+                new TableColumn("id", TableColumnType.SERIAL, "UNIQUE", "NOT NULL"),
                 new TableColumn("telegram_id", TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
                 new TableColumn("saved_phone", TableColumnType.TEXT),
                 new TableColumn("saved_address", TableColumnType.TEXT)

@@ -5,15 +5,15 @@ import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
 import java.util.HashMap;
 
-public class Order {
+public class OrderModel {
 
     private final long id;
-    private final User from;
+    private final UserModel from;
     private final String address;
     private final String phone;
-    private final HashMap<Meal, Integer> meals;
+    private final HashMap<MealModel, Integer> meals;
 
-    public Order(long id, User from, String address, String phone, HashMap<Meal, Integer> meals) {
+    public OrderModel(long id, UserModel from, String address, String phone, HashMap<MealModel, Integer> meals) {
         this.id = id;
         this.from = from;
         this.address = address;
@@ -25,7 +25,7 @@ public class Order {
         return id;
     }
 
-    public User getFrom() {
+    public UserModel getFrom() {
         return from;
     }
 
@@ -37,7 +37,7 @@ public class Order {
         return phone;
     }
 
-    public HashMap<Meal, Integer> getMeals() {
+    public HashMap<MealModel, Integer> getMeals() {
         return meals;
     }
 
@@ -47,9 +47,9 @@ public class Order {
 
     public static TableColumn[] getTableColumns(){
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
+                new TableColumn("id", TableColumnType.SERIAL, "NOT NULL", "UNIQUE"),
                 new TableColumn("user_id", TableColumnType.INTEGER, "NOT NULL"),
-                new TableColumn("address", TableColumnType.TEXT, "NOT NULL"),
+                new TableColumn("order_addres", TableColumnType.TEXT, "NOT NULL"),
                 new TableColumn("phone", TableColumnType.TEXT, "NOT NULL"),
                 new TableColumn("meals_data", TableColumnType.TEXT, "NOT NULL")
         };

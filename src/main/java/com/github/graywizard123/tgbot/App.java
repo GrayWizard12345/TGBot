@@ -3,6 +3,7 @@
  */
 package com.github.graywizard123.tgbot;
 
+import com.github.graywizard123.tgbot.db.DataBaseManager;
 import com.github.graywizard123.tgbot.gui.SceneManager;
 import com.github.graywizard123.tgbot.telegram.TelegramManager;
 import javafx.application.Application;
@@ -15,7 +16,9 @@ public class App extends Application {
     public static final Logger LOGGER = LoggerFactory.getLogger("TGBot");
 
     public static void main(String[] args) {
+        DataBaseManager.init();
         TelegramManager.start();
+
         SceneManager.init();
         launch();
     }

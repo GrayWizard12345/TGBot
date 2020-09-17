@@ -23,28 +23,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="Added database support (Using sqlite)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/TGBotMealsListUpdateEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryAddUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryRemoveUIController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_add_ui.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_remove_ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/model/MealTableItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/CategoryModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/MealModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/OrderModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/CategoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/TGBotOrderListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/TGBotOrderListUpdateEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/SceneLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/SceneLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/SceneManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/SceneManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/CategoryListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/CategoryListUpdateEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/MealsListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/MealsListUpdateEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/OrderListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/OrderListUpdateEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryAddUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryAddUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryRemoveUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryRemoveUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MainSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MenuSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MenuSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/category_add_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_add_ui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/category_remove_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_remove_ui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/graywizard123/tgbot/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,20 +123,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/layouts" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.github.graywizard123.tgbot.telegram.command" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Python\TGBot\src\main\resources" />
+      <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.graywizard123.tgbot.telegram.command" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,10 +204,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added database support (Using sqlite)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1600122367035">
+    <state x="632" y="174" key="#Project_Structure" timestamp="1600201898662">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1600122367035" />
+    <state x="632" y="174" key="#Project_Structure/0.0.2560.1410@0.0.2560.1410" timestamp="1600201898662" />
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1600287973585">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1600287973585" />
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599869206319">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -204,53 +220,75 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="957" y="425" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599945638979" />
-    <state width="2505" height="388" key="GridCell.Tab.0.bottom" timestamp="1600122371714">
+    <state x="639" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600355257565">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="388" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600122371714" />
-    <state width="2505" height="388" key="GridCell.Tab.0.center" timestamp="1600122371714">
+    <state x="639" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1410@0.0.2560.1410" timestamp="1600355257565" />
+    <state x="969" y="492" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600214759512">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="388" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600122371714" />
-    <state width="2505" height="388" key="GridCell.Tab.0.left" timestamp="1600122371714">
+    <state x="969" y="492" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1410@0.0.2560.1410" timestamp="1600214759512" />
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom" timestamp="1600379352007">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="388" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600122371714" />
-    <state width="2505" height="388" key="GridCell.Tab.0.right" timestamp="1600122371714">
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
+    <state width="2505" height="378" key="GridCell.Tab.0.center" timestamp="1600379352007">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="388" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600122371714" />
-    <state width="2505" height="478" key="GridCell.Tab.1.bottom" timestamp="1600034786085">
+    <state width="2505" height="378" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
+    <state width="2505" height="378" key="GridCell.Tab.0.left" timestamp="1600379352007">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="478" key="GridCell.Tab.1.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600034786085" />
-    <state width="2505" height="478" key="GridCell.Tab.1.center" timestamp="1600034786085">
+    <state width="2505" height="378" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
+    <state width="2505" height="378" key="GridCell.Tab.0.right" timestamp="1600379352007">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="478" key="GridCell.Tab.1.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600034786085" />
-    <state width="2505" height="478" key="GridCell.Tab.1.left" timestamp="1600034786085">
+    <state width="2505" height="378" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
+    <state width="2505" height="478" key="GridCell.Tab.1.bottom" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="478" key="GridCell.Tab.1.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600034786085" />
-    <state width="2505" height="478" key="GridCell.Tab.1.right" timestamp="1600034786085">
+    <state width="2505" height="478" key="GridCell.Tab.1.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600214598907" />
+    <state width="2505" height="478" key="GridCell.Tab.1.center" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="478" key="GridCell.Tab.1.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600034786085" />
-    <state x="757" y="385" key="IDE.errors.dialog" timestamp="1599927820649">
+    <state width="2505" height="478" key="GridCell.Tab.1.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600214598907" />
+    <state width="2505" height="478" key="GridCell.Tab.1.left" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="757" y="385" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1599927820649" />
-    <state x="632" y="174" key="SettingsEditor" timestamp="1599869497850">
+    <state width="2505" height="478" key="GridCell.Tab.1.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600214598907" />
+    <state width="2505" height="478" key="GridCell.Tab.1.right" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="632" y="174" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1599869497850" />
+    <state width="2505" height="478" key="GridCell.Tab.1.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600214598907" />
+    <state x="757" y="385" key="IDE.errors.dialog" timestamp="1600188882807">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="757" y="385" key="IDE.errors.dialog/0.0.2560.1410@0.0.2560.1410" timestamp="1600188882807" />
+    <state x="632" y="174" key="SettingsEditor" timestamp="1600372613824">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="632" y="174" key="SettingsEditor/0.0.2560.1410@0.0.2560.1410" timestamp="1600372613824" />
+    <state x="725" y="377" width="1109" height="785" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1600124513348">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="725" y="377" width="1109" height="785" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1410@0.0.2560.1410" timestamp="1600124513348" />
     <state x="852" y="329" width="840" height="1034" key="run.anything.popup" timestamp="1599946225650">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="852" y="329" width="840" height="1034" key="run.anything.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1599946225650" />
-    <state x="859" y="310" width="840" height="1034" key="search.everywhere.popup" timestamp="1600041417967">
+    <state x="859" y="310" width="840" height="1034" key="search.everywhere.popup" timestamp="1600287427017">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="859" y="310" width="840" height="1034" key="search.everywhere.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1600041417967" />
+    <state x="859" y="310" width="840" height="1034" key="search.everywhere.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1600287427017" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.sqlite.SQLiteException" package="org.sqlite" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

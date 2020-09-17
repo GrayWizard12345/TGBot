@@ -3,7 +3,7 @@ package com.github.graywizard123.tgbot.db.models;
 import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
-public class Meal {
+public class MealModel {
 
     private final long id;
     private String name;
@@ -11,7 +11,7 @@ public class Meal {
     private int price;
     private Long categoryId;
 
-    public Meal(long id, String name, String description, int price, Long categoryId) {
+    public MealModel(long id, String name, String description, int price, Long categoryId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -61,9 +61,9 @@ public class Meal {
 
     public static TableColumn[] getTableColumns() {
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
+                new TableColumn("id", TableColumnType.SERIAL, "UNIQUE", "NOT NULL"),
                 new TableColumn("name",TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
-                new TableColumn("description", TableColumnType.TEXT, "NOT NULL"),
+                new TableColumn("description", TableColumnType.TEXT),
                 new TableColumn("price", TableColumnType.INTEGER, "NOT NULL"),
                 new TableColumn("category_id", TableColumnType.INTEGER, "NOT NULL")
         };

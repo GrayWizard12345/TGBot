@@ -1,17 +1,19 @@
 package com.github.graywizard123.tgbot.event;
 
+import com.github.graywizard123.tgbot.db.models.OrderModel;
+
 import java.util.List;
 
 public class OrderListUpdateEvent implements ITGBotEvent {
 
-    private final List<Long> orderList;
+    private final List<OrderModel> orderModelList;
 
-    public OrderListUpdateEvent(List<Long> orderList) {
-        this.orderList = orderList;
+    public OrderListUpdateEvent(List<OrderModel> orderModelList) {
+        this.orderModelList = orderModelList;
     }
 
-    public List<Long> getOrderList() {
-        return orderList;
+    public List<OrderModel> getOrderList() {
+        return orderModelList;
     }
 
     @Override

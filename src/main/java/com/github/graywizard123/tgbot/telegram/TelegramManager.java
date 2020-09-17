@@ -7,8 +7,7 @@ import com.github.graywizard123.tgbot.telegram.command.condition.ICondition;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
-import org.telegram.telegrambots.meta.api.methods.polls.StopPoll;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
 import org.json.JSONObject;
@@ -69,5 +68,11 @@ public class TelegramManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void openMainMenu(Update context) {
+
+
+
     }
 }

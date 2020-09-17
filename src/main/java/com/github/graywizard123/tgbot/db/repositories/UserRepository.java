@@ -2,14 +2,14 @@ package com.github.graywizard123.tgbot.db.repositories;
 
 import com.github.graywizard123.tgbot.App;
 import com.github.graywizard123.tgbot.db.DataBaseManager;
-import com.github.graywizard123.tgbot.db.models.User;
+import com.github.graywizard123.tgbot.db.models.UserModel;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserRepository {
 
-    public static User getById(long id){
+    public static UserModel getById(long id){
         try {
             ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE id="+ id);
 
@@ -18,7 +18,7 @@ public class UserRepository {
                 String savedPhone = response.getString("saved_phone");
                 String savedAddress = response.getString("saved_address");
 
-                return new User(id, telegramId, savedPhone, savedAddress);
+                return new UserModel(id, telegramId, savedPhone, savedAddress);
             } else {
                 return null;
             }
@@ -29,16 +29,16 @@ public class UserRepository {
         }
     }
 
-    public static User getByTelegramId(long telegramId) {
+    public static UserModel getByTelegramId(long telegramId) {
         try {
-            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE telegram_id=\""+ telegramId + "\"");
+            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE telegram_id='"+ telegramId + "'");
 
             if (response.next()) {
                 int id = response.getInt("id");
                 String savedPhone = response.getString("saved_phone");
                 String savedAddress = response.getString("saved_address");
 
-                return new User(id, telegramId, savedPhone, savedAddress);
+                return new UserModel(id, telegramId, savedPhone, savedAddress);
             } else {
                 return null;
             }
@@ -49,30 +49,30 @@ public class UserRepository {
         }
     }
 
-    public static void update(User user){
+    public static void update(UserModel userModel){
         try {
-            DataBaseManager.executeUpdate(String.format("UPDATE users SET saved_phone=\"%s\", saved_address=\"%s\" WHERE id=%d",
-                    user.getSavedPhone(),
-                    user.getSavedAddress(),
-                    user.getId()));
+            DataBaseManager.executeUpdate(String.format("UPDATE users SET saved_phone='%s', saved_address='%s' WHERE id=%d",
+                    userModel.getSavedPhone(),
+                    userModel.getSavedAddress(),
+                    userModel.getId()));
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    public static void add(User user) {
+    public static void add(UserModel userModel) {
         try {
-            if (user.getId() == 0) {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(telegram_id, saved_phone, saved_address) VALUES(\"%s\", \"%s\", \"%s\")",
-                        user.getTelegramId(),
-                        user.getSavedPhone(),
-                        user.getSavedAddress()));
+            if (userModel.getId() == 0) {
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(telegram_id, saved_phone, saved_address) VALUES('%s', '%s', '%s')",
+                        userModel.getTelegramId(),
+                        userModel.getSavedPhone(),
+                        userModel.getSavedAddress()));
             } else  {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, \"%s\", \"%s\", \"%s\")",
-                        user.getId(),
-                        user.getTelegramId(),
-                        user.getSavedPhone(),
-                        user.getSavedAddress()));
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, '%s', '%s', '%s')",
+                        userModel.getId(),
+                        userModel.getTelegramId(),
+                        userModel.getSavedPhone(),
+                        userModel.getSavedAddress()));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

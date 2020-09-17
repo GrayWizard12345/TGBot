@@ -1,19 +1,19 @@
 package com.github.graywizard123.tgbot.event;
 
-import com.github.graywizard123.tgbot.db.models.Meal;
+import com.github.graywizard123.tgbot.db.models.MealModel;
 
 import java.util.List;
 
 public class MealsListUpdateEvent implements ITGBotEvent {
 
-    private final List<Meal> meals;
+    private final List<MealModel> mealModels;
 
-    public MealsListUpdateEvent(List<Meal> meals) {
-        this.meals = meals;
+    public MealsListUpdateEvent(List<MealModel> mealModels) {
+        this.mealModels = mealModels;
     }
 
-    public List<Meal> getMeals() {
-        return meals;
+    public List<MealModel> getMeals() {
+        return mealModels;
     }
 
     @Override

@@ -1,5 +1,8 @@
 package com.github.graywizard123.tgbot.telegram;
 
+import com.github.graywizard123.tgbot.App;
+import com.github.graywizard123.tgbot.db.models.UserModel;
+import com.github.graywizard123.tgbot.db.repositories.UserRepository;
 import com.github.graywizard123.tgbot.telegram.command.CommandExecutor;
 import com.github.graywizard123.tgbot.telegram.command.condition.ICondition;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -23,10 +26,46 @@ public class TelegramBot extends TelegramLongPollingBot {
     public TelegramBot(String username, String token) {
         this.username = username;
         this.token = token;
+
+        //Add welcome message
+        addCommand(
+                ctx -> ctx.hasMessage() && ctx.getMessage().getText().equals("/start"),
+                context -> {
+                    SendMessage sendWelcomeMessage = new SendMessage(context.getMessage().getChatId(), WELCOME_MESSAGE);
+
+                    try {
+                        execute(sendWelcomeMessage);
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
+
+                    UserModel newUserModel = new UserModel(0, context.getMessage().getChatId(), null, null);
+                    UserRepository.add(newUserModel);
+
+                    TelegramManager.openMainMenu(context);
+                });
+
+        addCommand(
+                context -> context.hasMessage() && context.getMessage().getText().equals("get_chat_id"),
+                context -> {
+                    try {
+                        execute(new SendMessage(context.getMessage().getChatId(), String.valueOf(context.getMessage().getChatId())));
+                    } catch (TelegramApiException e) {
+                        e.printStackTrace();
+                    }
+                }
+        );
     }
 
+    /*
+    * Use this to add action for bot
+    *
+    * @param condition - receive ICondition
+    * @param command - receive CommandExecutor
+    */
     public void addCommand(ICondition condition, CommandExecutor command) {
         commands.put(condition, command);
+        App.LOGGER.info("Added command in telegram bot");
     }
 
     public TelegramUser getUser(long chatId) {
@@ -44,18 +83,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         if(message.hasText()){
             String text = message.getText();
 
-            if (text.equals("/start")) {
-                SendMessage sendWelcomeMessage = new SendMessage(message.getChatId(), WELCOME_MESSAGE);
-                try {
-                    execute(sendWelcomeMessage);
-                } catch (TelegramApiException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                for (ICondition condition : commands.keySet()) {
-                    if (condition.check(update)) {
-                        commands.get(condition).run(update);
-                    }
+            for (ICondition condition : commands.keySet()) {
+                if (condition.check(update)) {
+                    commands.get(condition).run(update);
                 }
             }
         }

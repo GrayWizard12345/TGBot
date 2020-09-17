@@ -5,16 +5,16 @@ import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
 import java.util.List;
 
-public class Category {
+public class CategoryModel {
 
     private final long id;
     private String title;
-    private List<Meal> meals;
+    private List<MealModel> mealModels;
 
-    public Category(long id, String title, List<Meal> meals) {
+    public CategoryModel(long id, String title, List<MealModel> mealModels) {
         this.id = id;
         this.title = title;
-        this.meals = meals;
+        this.mealModels = mealModels;
     }
 
     public long getId() {
@@ -29,12 +29,12 @@ public class Category {
         this.title = title;
     }
 
-    public List<Meal> getMeals() {
-        return meals;
+    public List<MealModel> getMeals() {
+        return mealModels;
     }
 
-    public void setMeals(List<Meal> meals) {
-        this.meals = meals;
+    public void setMeals(List<MealModel> mealModels) {
+        this.mealModels = mealModels;
     }
 
     public static String getTableName(){
@@ -43,8 +43,8 @@ public class Category {
 
     public static TableColumn[] getTableColumns(){
         return new TableColumn[]{
-                new TableColumn("id", TableColumnType.INTEGER, "UNIQUE", "PRIMARY KEY", "AUTOINCREMENT"),
-                new TableColumn("title", TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
+                new TableColumn("id", TableColumnType.SERIAL, "UNIQUE", "NOT NULL"),
+                new TableColumn("title", TableColumnType.TEXT, "UNIQUE"),
                 new TableColumn("meals", TableColumnType.TEXT)
         };
     }

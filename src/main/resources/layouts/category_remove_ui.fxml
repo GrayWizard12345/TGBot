@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="186.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.graywizard123.tgbot.gui.controllers.CategoryRemoveUIController">
+<AnchorPane prefHeight="400.0" prefWidth="186.0" xmlns="http://javafx.com/javafx/8.0.251" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.graywizard123.tgbot.gui.controllers.CategoryRemoveUIController">
    <children>
       <ListView fx:id="categoryListView" prefHeight="367.0" prefWidth="186.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Button fx:id="removeButton" layoutX="67.0" layoutY="374.0" mnemonicParsing="false" text="Remove" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
