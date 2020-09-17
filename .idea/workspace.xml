@@ -22,38 +22,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="Added database support (Using sqlite)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/model/MealTableItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="sqlite -&gt; postgresql&#10;Done work with gui">
+      <change afterPath="$PROJECT_DIR$/example.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/last.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/last.log.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/log-%t.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/CategoryModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/MealModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/OrderModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/MealRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/CategoryListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/CategoryListUpdateEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/MealsListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/MealsListUpdateEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/OrderListUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/event/OrderListUpdateEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryAddUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryAddUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryRemoveUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/CategoryRemoveUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MainSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MenuSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/MenuSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/category_add_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_add_ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/category_remove_ui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/category_remove_ui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/github/graywizard123/tgbot/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599910977204</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sqlite -&gt; postgresql&#10;Done work with gui">
+      <created>1600379639849</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600379639849</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,7 +183,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added database support (Using sqlite)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added database support (Using sqlite)" />
+    <MESSAGE value="sqlite -&gt; postgresql&#10;Done work with gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="sqlite -&gt; postgresql&#10;Done work with gui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="632" y="174" key="#Project_Structure" timestamp="1600201898662">
@@ -228,22 +211,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="969" y="492" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1410@0.0.2560.1410" timestamp="1600214759512" />
-    <state width="2505" height="378" key="GridCell.Tab.0.bottom" timestamp="1600379352007">
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom" timestamp="1600382452150">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
-    <state width="2505" height="378" key="GridCell.Tab.0.center" timestamp="1600379352007">
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
+    <state width="2505" height="378" key="GridCell.Tab.0.center" timestamp="1600382452150">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
-    <state width="2505" height="378" key="GridCell.Tab.0.left" timestamp="1600379352007">
+    <state width="2505" height="378" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
+    <state width="2505" height="378" key="GridCell.Tab.0.left" timestamp="1600382452150">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
-    <state width="2505" height="378" key="GridCell.Tab.0.right" timestamp="1600379352007">
+    <state width="2505" height="378" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
+    <state width="2505" height="378" key="GridCell.Tab.0.right" timestamp="1600382452150">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600379352007" />
+    <state width="2505" height="378" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
     <state width="2505" height="478" key="GridCell.Tab.1.bottom" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

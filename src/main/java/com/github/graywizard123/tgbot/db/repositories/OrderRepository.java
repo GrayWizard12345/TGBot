@@ -43,13 +43,13 @@ public class OrderRepository {
 
     public static OrderModel getById(long id) {
         try {
-            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM orderModels WHERE id="+ id);
+            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM orders WHERE id="+ id);
 
             if (response.next()) {
                 int userId = response.getInt("user_id");
                 String phone = response.getString("phone");
                 String address = response.getString("order_addres");
-                String serializedMeals = response.getString("meals");
+                String serializedMeals = response.getString("meals_data");
 
                 return new OrderModel(id, UserRepository.getById(userId), address, phone, deserializeMeals(serializedMeals));
             } else {
@@ -87,14 +87,16 @@ public class OrderRepository {
     public static void add(OrderModel orderModel){
         try {
             if (orderModel.getId() == 0) {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, user_id, order_addres, phone, meals) VALUES(%d, %d, '%s', '%s', '%s')",
-                        orderModel.getId(),
+                DataBaseManager.executeUpdate(String.format("INSERT INTO %s(user_id, order_addres, phone, meals) VALUES(%d, '%s', '%s', '%s')",
+                        OrderModel.getTableName(),
                         orderModel.getFrom().getId(),
                         orderModel.getAddress(),
                         orderModel.getPhone(),
                         serializeMeals(orderModel.getMeals())));
             } else {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(user_id, order_addres, phone, meals) VALUES(%d, '%s', '%s', '%s')",
+                DataBaseManager.executeUpdate(String.format("INSERT INTO %s(id, user_id, order_addres, phone, meals) VALUES(%d, %d, '%s', '%s', '%s')",
+                        OrderModel.getTableName(),
+                        orderModel.getId(),
                         orderModel.getFrom().getId(),
                         orderModel.getAddress(),
                         orderModel.getPhone(),
@@ -111,22 +113,6 @@ public class OrderRepository {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-    public static List<Integer> getListOfIds(){
-        List<Integer> ids = new ArrayList<>();
-        try {
-            ResultSet response = DataBaseManager.executeQuery("SELECT id FROM orderModels");
-
-            while (response.next()){
-                ids.add(response.getInt(0));
-            }
-
-            return ids;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return null;
     }
 
 }
