@@ -23,12 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="sqlite -&gt; postgresql&#10;Done work with gui">
-      <change afterPath="$PROJECT_DIR$/example.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/last.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/last.log.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/log-%t.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +85,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectId" id="1hO4yl0GTJqHZTBrrGz0IwLysz6" />
   <component name="ProjectViewState">
@@ -106,15 +103,15 @@
     <property name="settings.editor.selected.configurable" value="gradle.compiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Projects\Python\TGBot\src\main\resources" />
-      <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.graywizard123.tgbot.telegram.command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.github.graywizard123.tgbot.telegram.command" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\Python\TGBot\src\main\resources" />
+      <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
   </component>
   <component name="RunManager">
