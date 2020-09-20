@@ -8,6 +8,8 @@ import com.github.graywizard123.tgbot.db.models.UserModel;
 import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
@@ -15,7 +17,7 @@ import java.util.Properties;
 public class DataBaseManager {
 
     public static final String DATABASE_PATH = "//localhost/tgbot";
-    public static final String CONFIG_FILE_PATH = "/database.properties";
+    public static final String CONFIG_FILE_PATH = "./cfg/database.properties";
 
     private static Connection connection;
     private static Statement statement;
@@ -26,7 +28,7 @@ public class DataBaseManager {
             Class.forName("org.postgresql.Driver");
 
             Properties props = new Properties();
-            props.load(DataBaseManager.class.getResourceAsStream(CONFIG_FILE_PATH));
+            props.load(new FileInputStream(CONFIG_FILE_PATH));
             connection = DriverManager.getConnection("jdbc:postgresql:"+DATABASE_PATH, props);
             statement = connection.createStatement();
 
@@ -34,6 +36,7 @@ public class DataBaseManager {
             createTable(MealModel.getTableName(), MealModel.getTableColumns());
             createTable(OrderModel.getTableName(), OrderModel.getTableColumns());
             createTable(CategoryModel.getTableName(), CategoryModel.getTableColumns());
+
 
             App.LOGGER.info("Database manager initialized");
         } catch (SQLException throwables) {

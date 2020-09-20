@@ -48,7 +48,7 @@ public class UserModel {
     public static TableColumn[] getTableColumns() {
         return new TableColumn[]{
                 new TableColumn("id", TableColumnType.SERIAL, "UNIQUE", "NOT NULL"),
-                new TableColumn("telegram_id", TableColumnType.TEXT, "NOT NULL", "UNIQUE"),
+                new TableColumn("telegram_id", TableColumnType.INTEGER, "NOT NULL", "UNIQUE"),
                 new TableColumn("saved_phone", TableColumnType.TEXT),
                 new TableColumn("saved_address", TableColumnType.TEXT)
         };

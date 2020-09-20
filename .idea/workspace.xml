@@ -23,8 +23,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9472771-9551-4ca5-aea5-320eb95566a6" name="Default Changelist" comment="sqlite -&gt; postgresql&#10;Done work with gui">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/FinishedOrderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/FinishedOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/gui/controllers/OrderHistoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/layouts/order_history.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/last.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/last.log.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log-%t.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/DataBaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/OrderModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/OrderModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/models/UserModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/db/table/TableColumnType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/ClientStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/ClientStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/graywizard123/tgbot/telegram/TelegramUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/layouts/main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/telegram/data.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +132,7 @@
       <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projects\TGBot\cfg" />
       <recent name="E:\Projects\Python\TGBot\src\main\resources" />
       <recent name="E:\Projects\Python\TGBot\src\main\resources\layouts" />
     </key>
@@ -184,14 +207,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="sqlite -&gt; postgresql&#10;Done work with gui" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="988" y="189" key="#Auto_Import" timestamp="1600477335821">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="988" y="189" key="#Auto_Import/0.0.2560.1410@0.0.2560.1410" timestamp="1600477335821" />
     <state x="632" y="174" key="#Project_Structure" timestamp="1600201898662">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="632" y="174" key="#Project_Structure/0.0.2560.1410@0.0.2560.1410" timestamp="1600201898662" />
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1600287973585">
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser" timestamp="1600484308199">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1600287973585" />
+    <state x="1038" y="340" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1410@0.0.2560.1410" timestamp="1600484308199" />
     <state x="932" y="296" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1599869206319">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -208,22 +235,22 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="969" y="492" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1410@0.0.2560.1410" timestamp="1600214759512" />
-    <state width="2505" height="378" key="GridCell.Tab.0.bottom" timestamp="1600382452150">
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom" timestamp="1600554025215">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
-    <state width="2505" height="378" key="GridCell.Tab.0.center" timestamp="1600382452150">
+    <state width="2505" height="378" key="GridCell.Tab.0.bottom/0.0.2560.1410@0.0.2560.1410" timestamp="1600554025215" />
+    <state width="2505" height="378" key="GridCell.Tab.0.center" timestamp="1600554025214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
-    <state width="2505" height="378" key="GridCell.Tab.0.left" timestamp="1600382452150">
+    <state width="2505" height="378" key="GridCell.Tab.0.center/0.0.2560.1410@0.0.2560.1410" timestamp="1600554025214" />
+    <state width="2505" height="378" key="GridCell.Tab.0.left" timestamp="1600554025214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
-    <state width="2505" height="378" key="GridCell.Tab.0.right" timestamp="1600382452150">
+    <state width="2505" height="378" key="GridCell.Tab.0.left/0.0.2560.1410@0.0.2560.1410" timestamp="1600554025214" />
+    <state width="2505" height="378" key="GridCell.Tab.0.right" timestamp="1600554025214">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2505" height="378" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600382452150" />
+    <state width="2505" height="378" key="GridCell.Tab.0.right/0.0.2560.1410@0.0.2560.1410" timestamp="1600554025214" />
     <state width="2505" height="478" key="GridCell.Tab.1.bottom" timestamp="1600214598907">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -252,10 +279,14 @@
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="725" y="377" width="1109" height="785" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1410@0.0.2560.1410" timestamp="1600124513348" />
-    <state x="852" y="329" width="840" height="1034" key="run.anything.popup" timestamp="1599946225650">
+    <state x="772" y="201" key="new project wizard" timestamp="1600527234629">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state x="852" y="329" width="840" height="1034" key="run.anything.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1599946225650" />
+    <state x="772" y="201" key="new project wizard/0.0.2560.1410@0.0.2560.1410" timestamp="1600527234629" />
+    <state x="852" y="329" width="840" height="1034" key="run.anything.popup" timestamp="1600481782882">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="852" y="329" width="840" height="1034" key="run.anything.popup/0.0.2560.1410@0.0.2560.1410" timestamp="1600481782882" />
     <state x="859" y="310" width="840" height="1034" key="search.everywhere.popup" timestamp="1600287427017">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>

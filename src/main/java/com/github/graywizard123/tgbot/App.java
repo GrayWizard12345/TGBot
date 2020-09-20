@@ -11,11 +11,39 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
+
 public class App extends Application {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("TGBot");
 
+    private static void checkConfigFiles() throws IOException {
+        boolean toClose = false;
+
+        File databaseConfigFile = new File(DataBaseManager.CONFIG_FILE_PATH);
+        File telegramConfigFile = new File(TelegramManager.CONFIG_FILE_PATH);
+
+        if (!databaseConfigFile.exists()) {
+            databaseConfigFile.createNewFile();
+            toClose = true;
+        }
+
+        if (!telegramConfigFile.exists()) {
+            telegramConfigFile.createNewFile();
+            toClose = true;
+        }
+
+        if (toClose) System.exit(1);
+    }
+
     public static void main(String[] args) {
+        try {
+            checkConfigFiles();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         DataBaseManager.init();
         TelegramManager.start();
 

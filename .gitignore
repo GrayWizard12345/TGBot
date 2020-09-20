@@ -6,4 +6,6 @@ build
 
 logs
 
+/cfg
+
 *.sqlite

@@ -8,19 +8,12 @@ public class TelegramUser {
     private ClientStage stage;
     private String phone;
     private String address;
-    private HashMap<Integer, Integer> basket;
+    private HashMap<Integer, Long> basket;
+    private long selectedMealId;
 
     public TelegramUser(long id, ClientStage stage) {
         this.id = id;
         this.stage = stage;
-    }
-
-    public TelegramUser(int id, ClientStage stage, String phone, String address, HashMap<Integer, Integer> basket) {
-        this.id = id;
-        this.stage = stage;
-        this.phone = phone;
-        this.address = address;
-        this.basket = basket;
     }
 
     public long getId() {
@@ -55,11 +48,19 @@ public class TelegramUser {
         this.address = address;
     }
 
-    public HashMap<Integer, Integer> getBasket() {
+    public HashMap<Integer, Long> getBasket() {
         return basket;
     }
 
-    public void setBasket(HashMap<Integer, Integer> basket) {
+    public void setBasket(HashMap<Integer, Long> basket) {
         this.basket = basket;
+    }
+
+    public long getSelectedMealId() {
+        return selectedMealId;
+    }
+
+    public void setSelectedMealId(long selectedMealId) {
+        this.selectedMealId = selectedMealId;
     }
 }

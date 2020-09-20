@@ -7,33 +7,27 @@ import com.github.graywizard123.tgbot.telegram.command.condition.ICondition;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
-import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.Serializable;
+import java.io.*;
+import java.util.Properties;
 
 public class TelegramManager {
 
     private static TelegramBot telegramBot;
+    public static final String CONFIG_FILE_PATH = "./cfg/telegram.properties";
 
     private static void init(){
         ApiContextInitializer.init();
 
-        Reader tgBotDataReader = new InputStreamReader(TelegramManager.class.getResourceAsStream("/telegram/data.json"));
-        StringBuilder tgBotDataRaw = new StringBuilder();
+        Properties config = new Properties();
         try {
-            while (tgBotDataReader.ready())
-                tgBotDataRaw.append((char) tgBotDataReader.read());
+            config.load(new FileInputStream(CONFIG_FILE_PATH));
+            telegramBot = new TelegramBot(config.getProperty("username"), config.getProperty("token"));
         } catch (IOException e) {
             e.printStackTrace();
+            System.exit(1);
         }
-        JSONObject object = new JSONObject(tgBotDataRaw.toString());
-        telegramBot = new TelegramBot(object.getString("username"), object.getString("token"));
     }
 
     public static void start(){
@@ -68,11 +62,5 @@ public class TelegramManager {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void openMainMenu(Update context) {
-
-
-
     }
 }

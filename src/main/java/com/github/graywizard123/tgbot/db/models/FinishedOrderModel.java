@@ -3,24 +3,29 @@ package com.github.graywizard123.tgbot.db.models;
 import com.github.graywizard123.tgbot.db.table.TableColumn;
 import com.github.graywizard123.tgbot.db.table.TableColumnType;
 
+import java.util.Date;
 import java.util.HashMap;
 
-public class OrderModel {
+public class FinishedOrderModel {
 
     private final long id;
     private final UserModel from;
     private final String address;
     private final String phone;
     private final HashMap<MealModel, Integer> meals;
-    private final PaymentType paymentType;
+    private final FinishedOrderModel.PaymentType paymentType;
+    private final boolean isAccepted;
+    private final Date date;
 
-    public OrderModel(long id, UserModel from, String address, String phone, HashMap<MealModel, Integer> meals, PaymentType paymentType) {
+    public FinishedOrderModel(long id, UserModel from, String address, String phone, HashMap<MealModel, Integer> meals, FinishedOrderModel.PaymentType paymentType, boolean isAccepted, Date date) {
         this.id = id;
         this.from = from;
         this.address = address;
         this.phone = phone;
         this.meals = meals;
         this.paymentType = paymentType;
+        this.isAccepted = isAccepted;
+        this.date = date;
     }
 
     public long getId() {
@@ -43,12 +48,20 @@ public class OrderModel {
         return meals;
     }
 
-    public PaymentType getPaymentType() {
+    public FinishedOrderModel.PaymentType getPaymentType() {
         return paymentType;
     }
 
-    public static String getTableName(){
-        return "orders";
+    public boolean isAccepted() {
+        return isAccepted;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public static String getTableName() {
+        return "finished_orders";
     }
 
     public static TableColumn[] getTableColumns(){
@@ -58,7 +71,9 @@ public class OrderModel {
                 new TableColumn("order_address", TableColumnType.TEXT, "NOT NULL"),
                 new TableColumn("phone", TableColumnType.TEXT, "NOT NULL"),
                 new TableColumn("meals", TableColumnType.TEXT, "NOT NULL"),
-                new TableColumn("payment_type", TableColumnType.TEXT, "NOT NULL")
+                new TableColumn("payment_type", TableColumnType.TEXT, "NOT NULL"),
+                new TableColumn("is_accepted", TableColumnType.BOOL, "NOT NULL"),
+                new TableColumn("date", TableColumnType.INTEGER, "NOT NULL")
         };
     }
 

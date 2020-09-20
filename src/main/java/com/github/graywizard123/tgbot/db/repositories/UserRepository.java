@@ -31,7 +31,7 @@ public class UserRepository {
 
     public static UserModel getByTelegramId(long telegramId) {
         try {
-            ResultSet response = DataBaseManager.executeQuery("SELECT * FROM users WHERE telegram_id='"+ telegramId + "'");
+            ResultSet response = DataBaseManager.executeQuery(String.format("SELECT * FROM users WHERE telegram_id=%d", telegramId));
 
             if (response.next()) {
                 int id = response.getInt("id");
@@ -63,16 +63,16 @@ public class UserRepository {
     public static void add(UserModel userModel) {
         try {
             if (userModel.getId() == 0) {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(telegram_id, saved_phone, saved_address) VALUES('%s', '%s', '%s')",
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(telegram_id, saved_phone, saved_address) VALUE(%d, '%s', '%s')",
                         userModel.getTelegramId(),
-                        userModel.getSavedPhone(),
-                        userModel.getSavedAddress()));
+                        userModel.getSavedPhone() == null ? "" : userModel.getSavedPhone(),
+                        userModel.getSavedAddress() == null ? "" : userModel.getSavedAddress()));
             } else  {
-                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, '%s', '%s', '%s')",
+                DataBaseManager.executeUpdate(String.format("INSERT INTO users(id, telegram_id, saved_phone, saved_address) VALUES(%d, %d, '%s', '%s')",
                         userModel.getId(),
                         userModel.getTelegramId(),
-                        userModel.getSavedPhone(),
-                        userModel.getSavedAddress()));
+                        userModel.getSavedPhone() == null ? "" : userModel.getSavedPhone(),
+                        userModel.getSavedAddress() == null ? "" : userModel.getSavedAddress()));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
